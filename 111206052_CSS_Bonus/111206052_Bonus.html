@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Arial", "sans-serif";
+            font: bold;
+            color: royalblue;
+            font-size: 15px;
+            display: flex;
+            height: 100vh;
+            margin: 5% 0% 10% 32%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .vertical-group {
+            display: flex;
+            margin-bottom: 3%;
+            float: left;
+            align-items: center;
+        }
+
+        .picture-group {
+            display: flex;
+            margin-bottom: 3%;
+            float: left;
+            align-items: flex-start;
+        }
+
+        .vertical-group label {
+            margin-right: 4%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
+        .picture-group label {
+            margin-left: -2%;
+            margin-right: 4%;
+            margin-top: 3%;
+        }
+
+        .vertical-group .left-align {
+            margin-right: 4.5%;
+        }
+
+        .vertical-group .right-align {
+            margin-left: 7%;
+        }
+
+        .vertical-group .textarea {
+            margin-left: -2.5%;
+        }
+
+        .vertical-group img {
+            margin-left: -2%;
+        }
+
+        input {
+            padding: 5px 2px 2px;
+        }
+
+        textarea {
+            float: left;
+            border-radius: 20px;
+            resize: none;
+        }
+
+    </style>
+    <title>111206062 Bonus</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="vertical-group">
+            <label>Input1</label>
+            <input type="text" id="input1" name="input1" size="70" placeholder="input1">
+        </div>
+
+        <div class="vertical-group">
+            <label class="left-align">Input2</label>
+            <input type="text" id="input2" name="input2" size="25" placeholder="input2">
+
+            <label class="right-align">Input3</label>
+            <input type="text" id="input3" name="input3" size="25" placeholder="input3">
+        </div>
+
+        <div class="vertical-group">
+            <label>Input4</label>
+            <input type="text" id="input4" name="input4" size="70" placeholder="input4">
+        </div>
+
+        <div class="vertical-group">
+            <label class="textarea">textarea</label>
+                <textarea rows="5" cols="67">
+                    make it not resizable
+                </textarea>
+        </div>
+    
+        <div class="picture-group">
+            <label>picture1</label>
+                <img src="picture.jpg" height="300" width="515">
+        </div>   
+    </div> 
+</body>
+
+</html>
