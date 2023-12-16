@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Page</title>
+    <style>
+        body {
+            font-family: 'Arial', 'sans-serif';
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #button1 {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        #button2 {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h2>Welcome to My Webpage</h2>
+    </div>
+
+    <div id="button-container">
+        <button id="button1" onclick="alert(number1);">Button 1</button>
+        <button id="button2" onclick="alert(number2);">Button 2</button>
+        <p></p>
+    </div>
+
+    <script type="text/javascript">
+
+        var number1;
+        number1 = parseInt(window.prompt("Please enter first number"));
+
+        var number2;
+        number2 = parseInt(window.prompt("Please enter second number"));
+
+        if(number1 > number2){
+            document.body.style.backgroundColor = 'lightblue';
+            document.writeln(number1 + " > " + number2);
+        }else if(number1 < number2){
+            document.body.style.backgroundColor = 'orange';
+            document.writeln(number2 + " > " + number1);
+        }else{
+            document.body.style.backgroundColor = 'lightyellow';
+            document.writeln(number2 + " == " + number1);
+        }
+
+    </script>
+
+</body>
+</html>
