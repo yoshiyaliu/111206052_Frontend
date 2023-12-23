@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll the dice</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        img {
+            width: 60px;
+            margin: 5px;
+        }
+
+        form {
+            margin-top: 15px;
+        }
+
+        table {
+            margin-left: 20px;
+            width: 100px;
+            align-items: right;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+<body>
+    <div>
+        <img id="die1" src="die1.png">
+        <img id="die2" src="die1.png">
+        <img id="die3" src="die1.png">
+        <img id="die4" src="die1.png">
+        <img id="die5" src="die1.png">
+        <img id="die6" src="die1.png">
+        <p></p>
+        <img id="die7" src="die1.png">
+        <img id="die8" src="die1.png">
+        <img id="die9" src="die1.png">
+        <img id="die10" src="die1.png">
+        <img id="die11" src="die1.png">
+        <img id="die12" src="die1.png">
+
+        <form action="#">
+            <input id="rollButton" type="button" value="Roll Dice">
+        </form>
+    </div>
+
+    <div style="padding-top: 2%">
+        <table border="1">
+        <tr>
+            <th>Face</th>
+            <th>Percent</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id="percent1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="percent2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="percent3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td id="percent4"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td id="percent5"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td id="percent6"></td>
+        </tr>
+    </table>
+    </div>
+</body>
+<script>
+    var faceCounts = [0, 0, 0, 0, 0, 0];
+
+    function start() {
+        var button = document.getElementById("rollButton");
+        button.addEventListener("click", rollDice);
+        die1Image = document.getElementById("die1");
+        die2Image = document.getElementById("die2");
+        die3Image = document.getElementById("die3");
+        die4Image = document.getElementById("die4");
+        die5Image = document.getElementById("die5");
+        die6Image = document.getElementById("die6");
+        die7Image = document.getElementById("die7");
+        die8Image = document.getElementById("die8");
+        die9Image = document.getElementById("die9");
+        die10Image = document.getElementById("die10");
+        die11Image = document.getElementById("die11");
+        die12Image = document.getElementById("die12");
+    }
+
+    function rollDice() {
+        setImage(die1Image);
+        setImage(die2Image);
+        setImage(die3Image);
+        setImage(die4Image);
+        setImage(die5Image);
+        setImage(die6Image);
+        setImage(die7Image);
+        setImage(die8Image);
+        setImage(die9Image);
+        setImage(die10Image);
+        setImage(die11Image);
+        setImage(die12Image);
+        updateFrequencyTable();
+    }
+
+    function setImage(dieImg) {
+        var dieNumber = Math.floor(Math.random()*6 + 1);
+        dieImg.setAttribute("src", "die" + dieNumber + ".png");
+        faceCounts[dieNumber - 1]++;
+    }
+
+    function updateFrequencyTable() {
+        var totalRolls = faceCounts.reduce((a, b) => a + b, 0);
+        for (var i = 0; i < 6; i++) {
+                var percent = ((faceCounts[i] / totalRolls) * 100).toFixed(2);
+                document.getElementById('percent' + (i + 1)).textContent = percent + "%";
+            }
+    }
+
+    window.addEventListener("load", start);
+</script>
+</html>
