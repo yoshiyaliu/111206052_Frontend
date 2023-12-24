@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<body>
+    
+</body>
+<script>
+    var num1, num2, operation, con;
+    con = "yes";
+
+    function add(x, y) {
+        return x + y;
+    }
+
+    function subtract(x, y) {
+        return x - y;
+    }
+
+    function multiply(x, y) {
+        return x * y;
+    }
+
+    function divide(x, y) {
+        if(y == 0){
+            invalidNum();
+        }
+        return x / y;
+    }
+
+    function invalidNum() {
+        alert("Please enter a valid number!");
+    }
+
+    function invalidOperation() {
+        alert("Please enter a valid operation!")
+    }
+
+    while(con == "yes"){
+        num1 = parseFloat(window.prompt("Enter the first number"));
+        while(isNaN(num1)){
+            invalidNum();
+            num1 = parseFloat(window.prompt("Enter the first number"));
+        }
+
+        num2 = parseFloat(window.prompt("Enter the second number"));
+        while(isNaN(num2)){
+            invalidNum();
+            num2 = parseFloat(window.prompt("Enter the second number"));
+        }
+
+        operation = window.prompt("Choose an operation (+, -, *, /):");
+        while(!["+", "-", "*", "/"].includes(operation)){
+            invalidOperation();
+            operation = window.prompt("Choose an operation (+, -, *, /):");
+        }
+
+        if (operation == "+") {
+            alert("Result: " + add(num1, num2));
+        } else if (operation == "-") {
+            alert("Result: " + subtract(num1, num2));
+        } else if (operation == "*") {
+            alert("Result: " + multiply(num1, num2));
+        } else if (operation == "/") {
+            alert("Result: " + divide(num1, num2));
+        }
+
+        con = window.prompt("Do you want to perform another calculation? (yes/no)");
+    }
+
+</script>
+</html>

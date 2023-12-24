@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Number</title>
+<body>
+    
+</body>
+<script>
+    var rand, number;
+    number = window.prompt("Input the number you guess");
+    rand = Math.floor(Math.random() * 10 + 1);
+
+    while(number != rand){
+        number = window.prompt("You're almost there, guess again!");
+    }
+
+    if(number == rand){
+        document.writeln("You did it! The answer is " + rand);
+    }
+</script>
+</html>
