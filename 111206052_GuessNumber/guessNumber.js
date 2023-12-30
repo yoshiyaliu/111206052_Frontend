@@ -18,13 +18,13 @@ function checkGuess() {
 
   // If the answer is correct, then output "Congratulations! You guessed the correct number!" with picture2 and music2.
   if(secretNumber == userGuess){
-    document.writeln("Congratulations! You guessed the correct number!");
+    resultElement.innerHTML = "Congratulations! You guessed the correct number!";
     showImageAndPlaySound("picture2.jpeg", "music2.mp3");
-    generateRandomNumber()
+    secretNumber = generateRandomNumber();
   }
   // If the answer is wrong, then output "Sorry, try again!" with picture1 and music1.
     else{
-      document.writeln("Sorry, try again!");
+      resultElement.innerHTML = "Sorry, try again!";
       showImageAndPlaySound("picture1.jpeg", "music1.mp3");
   }
   // P.S. Generate a new random number for the next round after getting the correct answer.
