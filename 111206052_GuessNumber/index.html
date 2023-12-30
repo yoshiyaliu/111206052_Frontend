@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number Game</title>
+
+  <!-- 1. Include CSS styles -->
+   <link rel="stylesheet" href="guessNumber.css">
+  
+  <!-- 2. Include JavaScript file -->
+    <script src="guessNumber.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Guess the Number Game</h1>
+    <p>Guess a number between 1 and 10:</p>
+
+    <!-- 3. Trigger this button with the Enter Key. -->
+    <input type="number" id="userGuess" placeholder="Enter your guess" onkeydown="handleKeyPress(event)">
+    <button onclick="checkGuess()" id="checkBtn">Check Guess</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function handleKeyPress(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            
+            document.getElementById("checkBtn").click();
+        }
+    }
+    </script>
+</body>
+</html>
